@@ -27,17 +27,19 @@ public class Notebook {
                 System.out.println("This notebook is light.");
             } else if(this.weight  >= 600 && this.weight <= 1600) {
                 System.out.println("This notebook is not too heavy.");
-            } else {System.out.println("This notebook is very heavy.");
+            } else {
+                System.out.println("This notebook is very heavy.");
 
             }
         }
 
-        public void checkYear() {
+        public void checkYearProfitability() {
             if(this.year >= 2018 && this.price <=1500) {
                 System.out.println("Recommended purchase.");
             } else if(this.year < 2017 && this.price >1500) {
                 System.out.println("Purchase is not recommended.");
-            } else {System.out.println("Purchase depends on your decision.");
+            } else {
+                System.out.println("Purchase depends on your decision.");
 
             }
         }
