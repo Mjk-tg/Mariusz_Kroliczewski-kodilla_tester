@@ -18,5 +18,8 @@ public class FirstClass {
         oldNotebook.checkWeight();
         oldNotebook.checkYearProfitability();
 
+        int notebookWeight = notebook.getWeight();
+        System.out.println(notebookWeight + "  test zwracania");
+
     }
 }
