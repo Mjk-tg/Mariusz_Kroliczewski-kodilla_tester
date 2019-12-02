@@ -1,29 +1,51 @@
 public class User {
-    String name;
-    int age;
+
+    private String name;
+    private int age;
+
+    public User(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    String getUserName() {
+        return name;
+    }
+
+    int getUserAge() {
+        return age;
+    }
 
     public static void main(String[] args) {
-        User[] user = new User[8];
-        String[] names = { "Adan","Jan","Rudolf","Nina","Zosia","Wiola","Anna","Maria" };
-        int[] ages = {23,27,54,38,18,27,33,31};
 
-        int sumAge=0;
-        double averageAge=0;
-        for  (int i = 0; i < ages.length; i++) {
-            sumAge=sumAge+ages[i];
-        }
-        averageAge=sumAge/ages.length;
+        User jan = new User("Jan", 54);
+        User rudolf = new User("Rudolf", 54);
+        User nina = new User("Nina", 38);
+        User zosia = new User("Zosia", 18);
+        User wiola = new User("Wiola", 27);
+        User anna = new User("Anna", 33);
+        User maria = new User("Maria", 31);
+        User adam = new User("Adam", 23);
 
-        for(int i=0; i< user.length; i++){
-            user[i] = new User();
-            user[i].name = names[i];
-            user[i].age = ages[i];
+        User[] users = {jan, rudolf, nina, zosia, wiola, anna, maria, adam};
+
+        int sumAge = 0;
+        for (int i = 0; i < users.length; i++) {
+            sumAge = sumAge + users[i].getUserAge();
         }
-        System.out.println("average age = " +averageAge);
+        int averageAge;
+        averageAge = sumAge / users.length;
+
+        System.out.println("average age = " + averageAge);
+
         System.out.println("Users in age below average are:");
-        for(int i=0; i<user.length; i++){
-            if(user[i].age < averageAge)
-            System.out.println(user[i].name+" "+user[i].age);
+
+
+        for (int i = 0; i < users.length; i++) {
+
+            if (users[i].getUserAge() < averageAge) {
+                System.out.println( users[i].getUserName() + "  " + users[i].getUserAge());
+            }
         }
 
     }
