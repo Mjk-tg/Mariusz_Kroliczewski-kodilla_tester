@@ -3,9 +3,9 @@ package com.kodilla.abstracts.homework;
 public class Person {
     private String firstName;
     private int age;
-    private String job;
+    public Job job;
 
-    public Person (String firstName, int age, String job) {
+    public Person (String firstName, int age, Job job) {
 
         this.firstName = firstName;
         this.age = age;
@@ -18,14 +18,14 @@ public class Person {
 
     public static void main(String[] args) {
 
-        Person Jan = new Person("Jan", 32, "Welder");
-        Person Anna = new Person("Anna", 29, "OfficeAssistant");
-        Person Rudolf = new Person("Rudolf", 58, "Welding Supervisor");
+        Person Jan = new Person("Jan", 32, new Welder(8000,"Job responsibilities") );
+        Person Anna = new Person("Anna", 29, new OfficeAssistant(4000,"Job responsibilities"));
+        Person Rudolf = new Person("Rudolf", 58, new WeldsSupervisor(11000,"Job responsibilities"));
 
         Person[] person = {Jan, Anna, Rudolf};
 
         for (int i = 0; i < person.length; i++) {
-            System.out.println(person[i].getPersonName());
+            System.out.println(person[i].getPersonName() + "  " + person[i].job.getResponsibilities());
         }
 
     }
