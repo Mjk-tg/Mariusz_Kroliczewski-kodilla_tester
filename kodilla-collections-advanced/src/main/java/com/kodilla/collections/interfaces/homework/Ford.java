@@ -5,7 +5,6 @@ public class Ford implements Car {
     private int speed;
     private int acceleration;
     private int deceleration;
-
     public Ford(int speed, int acceleration, int deceleration) {
         this.acceleration = acceleration;
         this.deceleration = deceleration;
@@ -20,13 +19,22 @@ public class Ford implements Car {
     }
 
     @Override
+    public int getAcceleration() {
+        return acceleration;
+    }
+
+    @Override
+    public int getDeceleration() {
+        return deceleration;
+    }
+
+    @Override
     public void increaseSpeed() {
-        speed = (int) (speed + acceleration);
+        speed = speed + acceleration;
     }
 
     @Override
     public void decreaseSpeed() {
-        speed = (int) (speed - deceleration);
+        speed = speed - deceleration;
     }
-
 }

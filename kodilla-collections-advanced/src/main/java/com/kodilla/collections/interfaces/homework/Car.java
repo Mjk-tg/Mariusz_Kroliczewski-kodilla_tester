@@ -2,10 +2,14 @@ package com.kodilla.collections.interfaces.homework;
 
 public interface Car {
 
-    public int getSpeed();
+    int getSpeed();
 
-    public void increaseSpeed();
+    int getAcceleration();
 
-    public void decreaseSpeed();
+    int getDeceleration();
+
+    void increaseSpeed();
+
+    void decreaseSpeed();
 
 }

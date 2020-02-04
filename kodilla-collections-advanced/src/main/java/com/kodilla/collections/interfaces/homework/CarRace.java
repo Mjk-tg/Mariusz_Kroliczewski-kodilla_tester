@@ -3,9 +3,9 @@ package com.kodilla.collections.interfaces.homework;
 public class CarRace {
     public static void main(String[] args) {
 
-        Ford ford = new Ford(75,9, 4);
-        Fiat fiat = new Fiat(80,6,3);
-        Opel opel = new Opel(79,7,4);
+        Car ford = new Ford(75,9, 10);
+        Car fiat = new Fiat(80,6,9);
+        Car opel = new Opel(79,7,8);
 
         doRace(ford);
         doRace(fiat);
