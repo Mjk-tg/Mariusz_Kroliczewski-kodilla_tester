@@ -18,9 +18,9 @@ public class Person {
 
     public static void main(String[] args) {
 
-        Person Jan = new Person("Jan", 32, new Welder(8000,"Job responsibilities") );
-        Person Anna = new Person("Anna", 29, new OfficeAssistant(4000,"Job responsibilities"));
-        Person Rudolf = new Person("Rudolf", 58, new WeldsSupervisor(11000,"Job responsibilities"));
+        Person Jan = new Person("Jan", 32, new Welder(8000,"Welding austenitic and ferromagnetic steel pipes") );
+        Person Anna = new Person("Anna", 29, new OfficeAssistant(4000,"Keeps records, serves the office"));
+        Person Rudolf = new Person("Rudolf", 58, new WeldsSupervisor(11000,"Supervise Welders"));
 
         Person[] person = {Jan, Anna, Rudolf};
 
