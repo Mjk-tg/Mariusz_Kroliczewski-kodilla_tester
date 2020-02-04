@@ -13,18 +13,18 @@ public class System2 extends OperatingSystem {
     @Override
     public void turnOn() {
         if (year - getPublicationDate() > 3) {
-            System.out.println("System install an upgrade and will restart");
+            System.out.println("System 2 install an upgrade and will restart");
         } else {
-            System.out.println("System is turned on");
+            System.out.println("System 2 is turned on");
         }
     }
 
     @Override
     public void turnOff() {
         if (year - getPublicationDate() > 3) {
-            System.out.println("System should be updated before will turned off");
+            System.out.println("System 2 should be updated before will turned off");
         } else {
-            System.out.println("System is turned off");
+            System.out.println("System 2 is turned off");
         }
     }
 }

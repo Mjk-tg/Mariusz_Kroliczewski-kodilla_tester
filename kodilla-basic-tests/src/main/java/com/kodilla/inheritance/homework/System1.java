@@ -13,18 +13,18 @@ public class System1 extends OperatingSystem{
     @Override
     public void turnOn() {
         if (year - getPublicationDate() > 7) {
-            System.out.println("System is not supported and will turned off");
+            System.out.println("System 1 is not supported and will turned off");
         } else {
-            System.out.println("System is turned on");
+            System.out.println("System 1 is turned on");
         }
     }
 
     @Override
     public void turnOff() {
         if (year - getPublicationDate() > 1) {
-            System.out.println("System should be updated before will turned off");
+            System.out.println("System 1 should be updated before will turned off");
         } else {
-            System.out.println("System is turned off");
+            System.out.println("System 1 is turned off");
         }
     }
 
