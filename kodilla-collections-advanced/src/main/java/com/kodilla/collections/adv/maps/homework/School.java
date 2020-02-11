@@ -4,11 +4,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class School {
-        private List<Integer> pupilsQuantityInSchool = new ArrayList<>();
 
-        public School (int...pupilsQuantityInSchool) {
+        private List<Integer> pupilsQuantityInSchool = new ArrayList<>();
+        private String schoolName;
+
+        public School (String schoolName, int...pupilsQuantityInSchool) {
                 for (int pupilsQuantityInClass : pupilsQuantityInSchool)
                         this.pupilsQuantityInSchool.add(pupilsQuantityInClass);
+                        this.schoolName=schoolName;
         }
 
         public int getTotalPupilsInSchool() {
@@ -17,5 +20,8 @@ public class School {
                 totalPupilsInSchool = totalPupilsInSchool + pupilsQuantityInSchool;
 
                 return totalPupilsInSchool;
+        }
+        public String getSchoolName() {
+                return schoolName;
         }
 }
