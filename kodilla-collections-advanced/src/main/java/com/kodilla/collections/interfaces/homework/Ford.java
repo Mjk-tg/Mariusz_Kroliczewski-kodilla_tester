@@ -18,12 +18,10 @@ public class Ford implements Car {
         return speed;
     }
 
-    @Override
     public int getAcceleration() {
         return acceleration;
     }
 
-    @Override
     public int getDeceleration() {
         return deceleration;
     }
