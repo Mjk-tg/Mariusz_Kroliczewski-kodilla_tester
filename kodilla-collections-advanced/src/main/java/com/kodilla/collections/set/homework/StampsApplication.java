@@ -1,7 +1,5 @@
 package com.kodilla.collections.set.homework;
 
-import com.kodilla.collections.set.Order;
-
 import java.util.HashSet;
 import java.util.Set;
 

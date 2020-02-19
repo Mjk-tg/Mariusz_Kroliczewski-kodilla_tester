@@ -1,25 +1,24 @@
 package com.kodilla.bank.homework;
 
 public class Bank {
-    public Bank(CashMachine krakowska, CashMachine zagorska, CashMachine pilsudskiego, CashMachine ratuszowa, CashMachine hala, CashMachine gwarek, CashMachine[] cashMachines) {
-        this.krakowska = krakowska;
-        this.zagorska = zagorska;
-        this.pilsudskiego = pilsudskiego;
-        this.ratuszowa = ratuszowa;
-        this.hala = hala;
-        this.gwarek = gwarek;
-        this.cashMachines = cashMachines;
+
+    public CashMachine krakowska;
+    public CashMachine zagorska;
+    public CashMachine pilsudskiego;
+    public CashMachine ratuszowa;
+    public CashMachine hala;
+    public CashMachine gwarek;
+
+    public Bank() {
+        this.krakowska = new CashMachine();
+        this.zagorska = new CashMachine();
+        this.pilsudskiego = new CashMachine();
+        this.ratuszowa = new CashMachine();
+        this.hala = new CashMachine();
+        this.gwarek = new CashMachine();
+
     }
-
-    CashMachine krakowska = new CashMachine();
-    CashMachine zagorska = new CashMachine();
-    CashMachine pilsudskiego = new CashMachine();
-    CashMachine ratuszowa = new CashMachine();
-    CashMachine hala = new CashMachine();
-    CashMachine gwarek = new CashMachine();
-
-    CashMachine[] cashMachines = {krakowska, zagorska, pilsudskiego, ratuszowa, hala, gwarek};
-
+        CashMachine[] cashMachines = {krakowska, zagorska, pilsudskiego, ratuszowa, hala, gwarek};
 
     public int totalMachinesBalance(){
         int totalBalance = 0;
@@ -32,35 +31,53 @@ public class Bank {
     public int cashWithdrawalCounter(){
         int withdrawalCounter=0;
             for (int i=0; i < cashMachines.length; i++ ){
-            int[] cashOperations = cashMachines[i].getCashOperations();
-            if ( cashOperations[i]< 0) {
-                withdrawalCounter = withdrawalCounter + cashOperations[i];
-            } else {
-                withdrawalCounter = withdrawalCounter + 0;
+                int[] cashOperations = cashMachines[i].getCashOperations();
+                    for (int n=0; n < cashOperations.length; n++){
+                    if ( cashOperations [n] < 0) {
+                    withdrawalCounter = withdrawalCounter + cashOperations[n];
+                }
             }
-
         }
         return withdrawalCounter;
     }
 
-    public int cashPaymentCounter(int withdrawalCounter){
-        int paymentCounter = cashMachines.length - withdrawalCounter;
+    public int cashPaymentCounter(){
+        int paymentCounter = 0;
+        for (int i=0; i < cashMachines.length; i++ ){
+            int[] cashOperations = cashMachines[i].getCashOperations();
+                for (int n=0; n < cashOperations.length; n++){
+                if ( cashOperations[n]> 0) {
+                    paymentCounter = paymentCounter + cashOperations[n];
+                }
+            }
+        }
         return paymentCounter;
     }
 
     public int averageCashWithdrawal(){
-        int averageWithdrawal =0;
         int totalWithdrawal = 0;
         for (int i=0; i < cashMachines.length; i++ ) {
+            int[] cashOperations = cashMachines[i].getCashOperations();
+            for (int n=0; n < cashOperations.length; n++) {
+                if (cashOperations[n] < 0) {
+                    totalWithdrawal = totalWithdrawal + cashOperations[n];
+                }
+            }
         }
-
-        return averageWithdrawal;
+        return totalWithdrawal / cashWithdrawalCounter();
     }
 
     public int averageCashPayment(){
-        int averagePayment=0;
-
-        return averagePayment;
+        int totalPayment = 0;
+        for (int i=0; i < cashMachines.length; i++ ) {
+            int[] cashOperations = cashMachines[i].getCashOperations();
+            for (int n=0; n < cashOperations.length; n++) {
+                if (cashOperations[n] > 0) {
+                    totalPayment = totalPayment + cashOperations[n];
+                }
+            }
+        }
+        return totalPayment / cashPaymentCounter();
     }
 
 }

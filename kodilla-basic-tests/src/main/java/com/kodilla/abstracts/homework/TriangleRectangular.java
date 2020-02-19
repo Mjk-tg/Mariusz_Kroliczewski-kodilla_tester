@@ -7,15 +7,15 @@ public class TriangleRectangular extends  Shape {
         super(firstDim, secondDim);
     }
 
-    double hypotenuse = Math.sqrt(Math.pow(getFirstDim(),2) + Math.pow(getSecondDim(),2));
+    double hypotenuse = Math.sqrt(Math.pow(getHeight(),2) + Math.pow(getWidth(),2));
 
     @Override
     public double perimeter() {
-        return getFirstDim() + getSecondDim() + hypotenuse ;
+        return getHeight() + getWidth() + hypotenuse ;
     }
 
     @Override
     public double area() {
-        return (getFirstDim() * getSecondDim())/2;
+        return (getHeight() * getWidth())/2;
     }
 }

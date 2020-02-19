@@ -25,8 +25,8 @@ public class CashMachine {
 
     public int getBalance(){
         int balance = 0;
-        for (int n = 0; n < this.cashOperations.length; n++) {
-            balance = balance + this.cashOperations[n];
+        for (int n = 0; n < cashOperations.length; n++) {
+            balance = balance + cashOperations[n];
         }
         return balance;
     }

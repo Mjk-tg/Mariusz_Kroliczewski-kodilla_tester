@@ -3,18 +3,18 @@ package com.kodilla.abstracts.homework;
 public class Rectangle extends Shape {
 
 
-    public Rectangle(double firstDim, double secondDim) {
-        super(firstDim, secondDim);
+    public Rectangle(double height, double width) {
+        super(height, width);
     }
 
     @Override
     public double perimeter() {
-        return (getFirstDim()+getSecondDim())*2;
+        return (getHeight()+getWidth())*2;
     }
 
     @Override
     public double area() {
-        return getSecondDim()*getFirstDim();
+        return getHeight()*getWidth();
     }
 
 

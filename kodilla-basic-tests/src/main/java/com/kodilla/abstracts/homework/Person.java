@@ -18,17 +18,31 @@ public class Person {
 
     public static void main(String[] args) {
 
-        Person Jan = new Person("Jan", 32, new Welder(8000,"Welding austenitic and ferromagnetic steel pipes") );
-        Person Anna = new Person("Anna", 29, new OfficeAssistant(4000,"Keeps records, serves the office"));
-        Person Rudolf = new Person("Rudolf", 58, new WeldsSupervisor(11000,"Supervise Welders"));
+        Person jan = new Person("Jan", 32, new Welder(8000,"Welding austenitic and ferromagnetic steel pipes") );
+        Person anna = new Person("Anna", 29, new OfficeAssistant(4000,"Keeps records, serves the office"));
+        Person rudolf = new Person("Rudolf", 58, new WeldsSupervisor(11000,"Supervise Welders"));
 
-        Person[] person = {Jan, Anna, Rudolf};
+        Person[] person = {jan, anna, rudolf};
 
         for (int i = 0; i < person.length; i++) {
-            System.out.println(person[i].getPersonName() + "  " + person[i].job.getResponsibilities());
+            System.out.println(person[i].getPersonName() + "  " + getPersonResponsibilities(person[i].getJob()));
         }
-
     }
 
+    private static String getPersonResponsibilities(Job job) {
+        String responsibilities = job.getResponsibilities();
+        return responsibilities;
+    }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public Job getJob() {
+        return job;
+    }
 }
