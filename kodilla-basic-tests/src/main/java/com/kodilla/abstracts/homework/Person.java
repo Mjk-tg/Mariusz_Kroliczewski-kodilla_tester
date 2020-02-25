@@ -16,8 +16,6 @@ public class Person {
         return firstName;
     }
 
-
-
     public static void main(String[] args) {
 
         Person jan = new Person("Jan", 32, new Welder(8000,"Welding austenitic and ferromagnetic steel pipes") );
@@ -34,10 +32,6 @@ public class Person {
     private static String getPersonResponsibilities(Job job) {
         String responsibilities = job.getResponsibilities();
         return responsibilities;
-    }
-
-    public String getFirstName() {
-        return firstName;
     }
 
     public int getAge() {
