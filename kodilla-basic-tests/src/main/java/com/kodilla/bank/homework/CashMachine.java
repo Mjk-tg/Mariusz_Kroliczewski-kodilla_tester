@@ -10,16 +10,12 @@ public class CashMachine {
         this.cashOperations = new int[0];
 
     }
-    public void newCashOperations(int cashOperation) {
+    public int[] newCashOperations(int cashOperation) {
         this.size++;
         int[] newTab = new int[this.size];
         System.arraycopy(cashOperations, 0, newTab, 0, cashOperations.length);
         newTab[this.size - 1] = cashOperation;
         this.cashOperations = newTab;
-
-    }
-
-    public int[] getCashOperations() {
         return cashOperations;
     }
 
@@ -32,8 +28,21 @@ public class CashMachine {
     }
 
     public int getOperationsCounter(){
-        int counter = this.size;
+        int counter = getSize();
         return counter;
     }
 
+    public int getCashOperation(int i) {
+        int cashOperation;
+        cashOperation=cashOperations[i];
+        return cashOperation;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public int[] getCashOperations() {
+        return cashOperations;
+    }
 }

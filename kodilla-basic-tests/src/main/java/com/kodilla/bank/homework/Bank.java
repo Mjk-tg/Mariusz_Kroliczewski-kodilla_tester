@@ -2,23 +2,25 @@ package com.kodilla.bank.homework;
 
 public class Bank {
 
-    public CashMachine krakowska;
-    public CashMachine zagorska;
-    public CashMachine pilsudskiego;
-    public CashMachine ratuszowa;
-    public CashMachine hala;
-    public CashMachine gwarek;
+    public CashMachine krakowska = new CashMachine();
+    public CashMachine zagorska = new CashMachine();;
+    public CashMachine pilsudskiego = new CashMachine();
+    public CashMachine ratuszowa = new CashMachine();
+    public CashMachine hala = new CashMachine();
+    public CashMachine gwarek = new CashMachine();
 
     public Bank() {
-        this.krakowska = new CashMachine();
-        this.zagorska = new CashMachine();
-        this.pilsudskiego = new CashMachine();
-        this.ratuszowa = new CashMachine();
-        this.hala = new CashMachine();
-        this.gwarek = new CashMachine();
-
+        this.krakowska = krakowska;
+        this.zagorska = zagorska;
+        this.pilsudskiego = pilsudskiego;
+        this.ratuszowa = ratuszowa;
+        this.hala = hala;
+        this.gwarek = gwarek;
     }
+
         CashMachine[] cashMachines = {krakowska, zagorska, pilsudskiego, ratuszowa, hala, gwarek};
+
+
 
     public int totalMachinesBalance(){
         int totalBalance = 0;
@@ -31,23 +33,23 @@ public class Bank {
     public int cashWithdrawalCounter(){
         int withdrawalCounter=0;
             for (int i=0; i < cashMachines.length; i++ ){
-                int[] cashOperations = cashMachines[i].getCashOperations();
-                    for (int n=0; n < cashOperations.length; n++){
-                    if ( cashOperations [n] < 0) {
-                    withdrawalCounter = withdrawalCounter + cashOperations[n];
+                for (int n=0; n<cashMachines[i].getSize(); n++) {
+                    int cashOperation = cashMachines[i].getCashOperation(n);
+                    if (cashOperation < 0) {
+                        withdrawalCounter = withdrawalCounter +1;
+                    }
                 }
             }
-        }
-        return withdrawalCounter;
+            return withdrawalCounter;
     }
 
     public int cashPaymentCounter(){
         int paymentCounter = 0;
         for (int i=0; i < cashMachines.length; i++ ){
-            int[] cashOperations = cashMachines[i].getCashOperations();
-                for (int n=0; n < cashOperations.length; n++){
-                if ( cashOperations[n]> 0) {
-                    paymentCounter = paymentCounter + cashOperations[n];
+            for (int n=0; n < cashMachines[i].getSize(); n++){
+                int cashOperation = cashMachines[i].getCashOperation(n);
+                if (cashOperation > 0) {
+                    paymentCounter = paymentCounter +1;
                 }
             }
         }
@@ -64,7 +66,13 @@ public class Bank {
                 }
             }
         }
-        return totalWithdrawal / cashWithdrawalCounter();
+        int averageWithdrawal;
+        if (cashWithdrawalCounter() == 0) {
+            averageWithdrawal=0;
+        } else {
+            averageWithdrawal = totalWithdrawal / cashWithdrawalCounter();
+        }
+        return averageWithdrawal;
     }
 
     public int averageCashPayment(){
@@ -77,7 +85,12 @@ public class Bank {
                 }
             }
         }
-        return totalPayment / cashPaymentCounter();
+        int averagePayment;
+        if (cashPaymentCounter() == 0) {
+            averagePayment=0;
+            } else {
+                averagePayment = totalPayment / cashPaymentCounter();
+        }
+        return averagePayment;
     }
-
 }
