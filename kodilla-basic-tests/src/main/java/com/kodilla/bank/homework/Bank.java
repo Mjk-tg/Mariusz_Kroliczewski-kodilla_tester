@@ -2,24 +2,23 @@ package com.kodilla.bank.homework;
 
 public class Bank {
 
-    public CashMachine krakowska = new CashMachine();
-    public CashMachine zagorska = new CashMachine();;
-    public CashMachine pilsudskiego = new CashMachine();
-    public CashMachine ratuszowa = new CashMachine();
-    public CashMachine hala = new CashMachine();
-    public CashMachine gwarek = new CashMachine();
+    private CashMachine krakowska;
+    private CashMachine zagorska;
+    private CashMachine pilsudskiego;
+    private CashMachine ratuszowa;
+    private CashMachine hala;
+    private CashMachine gwarek;
+    private CashMachine[] cashMachines;
 
     public Bank() {
-        this.krakowska = krakowska;
-        this.zagorska = zagorska;
-        this.pilsudskiego = pilsudskiego;
-        this.ratuszowa = ratuszowa;
-        this.hala = hala;
-        this.gwarek = gwarek;
+        this.krakowska = new CashMachine();
+        this.zagorska = new CashMachine();
+        this.pilsudskiego = new CashMachine();
+        this.ratuszowa = new CashMachine();
+        this.hala = new CashMachine();
+        this.gwarek = new CashMachine();
+        this.cashMachines = new CashMachine[]{krakowska, zagorska, pilsudskiego, ratuszowa, hala, gwarek};
     }
-
-        CashMachine[] cashMachines = {krakowska, zagorska, pilsudskiego, ratuszowa, hala, gwarek};
-
 
 
     public int totalMachinesBalance(){
@@ -92,5 +91,33 @@ public class Bank {
                 averagePayment = totalPayment / cashPaymentCounter();
         }
         return averagePayment;
+    }
+
+    public CashMachine getKrakowska() {
+        return krakowska;
+    }
+
+    public CashMachine getZagorska() {
+        return zagorska;
+    }
+
+    public CashMachine getPilsudskiego() {
+        return pilsudskiego;
+    }
+
+    public CashMachine getRatuszowa() {
+        return ratuszowa;
+    }
+
+    public CashMachine getHala() {
+        return hala;
+    }
+
+    public CashMachine getGwarek() {
+        return gwarek;
+    }
+
+    public CashMachine[] getCashMachines() {
+        return cashMachines;
     }
 }

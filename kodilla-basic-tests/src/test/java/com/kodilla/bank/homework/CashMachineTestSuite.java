@@ -15,9 +15,9 @@ public class CashMachineTestSuite {
     @Test
     public void shouldAddThreeOperationsToArray(){
         CashMachine cashMachine = new CashMachine();
-        cashMachine.newCashOperations(100);
-        cashMachine.newCashOperations(-200);
-        cashMachine.newCashOperations(500);
+        cashMachine.addNewCashOperations(100);
+        cashMachine.addNewCashOperations(-200);
+        cashMachine.addNewCashOperations(500);
 
         int[] cashOperations = cashMachine.getCashOperations();
         assertEquals(3,cashOperations.length);
@@ -28,19 +28,19 @@ public class CashMachineTestSuite {
     @Test
     public void shouldCountMachineBalans(){
         CashMachine cashMachine = new CashMachine();
-        cashMachine.newCashOperations(100);
-        cashMachine.newCashOperations(-200);
-        cashMachine.newCashOperations(500);
+        cashMachine.addNewCashOperations(100);
+        cashMachine.addNewCashOperations(-200);
+        cashMachine.addNewCashOperations(500);
         assertEquals(400,cashMachine.getBalance());
     }
 
     @Test
     public void shouldCountNumberOfOperations(){
         CashMachine cashMachine = new CashMachine();
-        cashMachine.newCashOperations(100);
-        cashMachine.newCashOperations(-200);
-        cashMachine.newCashOperations(500);
-        cashMachine.newCashOperations(1500);
+        cashMachine.addNewCashOperations(100);
+        cashMachine.addNewCashOperations(-200);
+        cashMachine.addNewCashOperations(500);
+        cashMachine.addNewCashOperations(1500);
         assertEquals(4,cashMachine.getOperationsCounter());
     }
 }

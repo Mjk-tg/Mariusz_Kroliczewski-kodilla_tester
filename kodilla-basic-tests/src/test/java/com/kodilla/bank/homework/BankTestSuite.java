@@ -9,16 +9,16 @@ public class BankTestSuite {
     public void totalMachinesBalance(){
         Bank bank = new Bank();
 
-        bank.krakowska.newCashOperations(100);
-        bank.krakowska.newCashOperations(300);
-        bank.zagorska.newCashOperations(100);
-        bank.zagorska.newCashOperations(-500);
-        bank.zagorska.newCashOperations(-400);
-        bank.hala.newCashOperations(600);
-        bank.hala.newCashOperations(-800);
-        bank.pilsudskiego.newCashOperations(100);
-        bank.ratuszowa.newCashOperations(-100);
-        bank.gwarek.newCashOperations(300);
+        bank.getKrakowska().addNewCashOperations(100);
+        bank.getKrakowska().addNewCashOperations(300);
+        bank.getZagorska().addNewCashOperations(100);
+        bank.getZagorska().addNewCashOperations(-500);
+        bank.getZagorska().addNewCashOperations(-400);
+        bank.getHala().addNewCashOperations(600);
+        bank.getHala().addNewCashOperations(-800);
+        bank.getPilsudskiego().addNewCashOperations(100);
+        bank.getRatuszowa().addNewCashOperations(-100);
+        bank.getGwarek().addNewCashOperations(300);
 
         int totalBalance = bank.totalMachinesBalance();
         assertEquals(-300,totalBalance);
@@ -28,16 +28,16 @@ public class BankTestSuite {
     public void totalMachinesBalanceIfNoOperations(){
         Bank bank = new Bank();
 
-        bank.krakowska.newCashOperations(0);
-        bank.krakowska.newCashOperations(0);
-        bank.zagorska.newCashOperations(0);
-        bank.zagorska.newCashOperations(0);
-        bank.zagorska.newCashOperations(0);
-        bank.hala.newCashOperations(0);
-        bank.hala.newCashOperations(0);
-        bank.pilsudskiego.newCashOperations(0);
-        bank.ratuszowa.newCashOperations(0);
-        bank.gwarek.newCashOperations(0);
+        bank.getKrakowska().addNewCashOperations(0);
+        bank.getKrakowska().addNewCashOperations(0);
+        bank.getZagorska().addNewCashOperations(0);
+        bank.getZagorska().addNewCashOperations(0);
+        bank.getZagorska().addNewCashOperations(0);
+        bank.getHala().addNewCashOperations(0);
+        bank.getHala().addNewCashOperations(0);
+        bank.getPilsudskiego().addNewCashOperations(0);
+        bank.getRatuszowa().addNewCashOperations(0);
+        bank.getGwarek().addNewCashOperations(0);
 
         int totalBalance = bank.totalMachinesBalance();
         assertEquals(0,totalBalance);
@@ -55,16 +55,16 @@ public class BankTestSuite {
     public void cashWithdrawalCounter(){
         Bank bank = new Bank();
 
-        bank.krakowska.newCashOperations(100);
-        bank.krakowska.newCashOperations(300);
-        bank.zagorska.newCashOperations(100);
-        bank.zagorska.newCashOperations(-500);
-        bank.zagorska.newCashOperations(-400);
-        bank.hala.newCashOperations(600);
-        bank.hala.newCashOperations(-800);
-        bank.pilsudskiego.newCashOperations(100);
-        bank.ratuszowa.newCashOperations(-100);
-        bank.gwarek.newCashOperations(300);
+        bank.getKrakowska().addNewCashOperations(100);
+        bank.getKrakowska().addNewCashOperations(300);
+        bank.getZagorska().addNewCashOperations(100);
+        bank.getZagorska().addNewCashOperations(-500);
+        bank.getZagorska().addNewCashOperations(-400);
+        bank.getHala().addNewCashOperations(600);
+        bank.getHala().addNewCashOperations(-800);
+        bank.getPilsudskiego().addNewCashOperations(100);
+        bank.getRatuszowa().addNewCashOperations(-100);
+        bank.getGwarek().addNewCashOperations(300);
 
         int withdrawalCounter = bank.cashWithdrawalCounter();
         assertEquals(4, withdrawalCounter);
@@ -74,16 +74,16 @@ public class BankTestSuite {
     public void cashWithdrawalCounterIfNoWithdrawal(){
         Bank bank = new Bank();
 
-        bank.krakowska.newCashOperations(100);
-        bank.krakowska.newCashOperations(300);
-        bank.zagorska.newCashOperations(100);
-        bank.zagorska.newCashOperations(500);
-        bank.zagorska.newCashOperations(400);
-        bank.hala.newCashOperations(600);
-        bank.hala.newCashOperations(800);
-        bank.pilsudskiego.newCashOperations(100);
-        bank.ratuszowa.newCashOperations(100);
-        bank.gwarek.newCashOperations(300);
+        bank.getKrakowska().addNewCashOperations(100);
+        bank.getKrakowska().addNewCashOperations(300);
+        bank.getZagorska().addNewCashOperations(100);
+        bank.getZagorska().addNewCashOperations(500);
+        bank.getZagorska().addNewCashOperations(400);
+        bank.getHala().addNewCashOperations(600);
+        bank.getHala().addNewCashOperations(800);
+        bank.getPilsudskiego().addNewCashOperations(100);
+        bank.getRatuszowa().addNewCashOperations(100);
+        bank.getGwarek().addNewCashOperations(300);
 
         int withdrawalCounter = bank.cashWithdrawalCounter();
         assertEquals(0, withdrawalCounter);
@@ -101,16 +101,16 @@ public class BankTestSuite {
     public void cashPaymentCounter() {
         Bank bank = new Bank();
 
-        bank.krakowska.newCashOperations(100);
-        bank.krakowska.newCashOperations(300);
-        bank.zagorska.newCashOperations(100);
-        bank.zagorska.newCashOperations(-500);
-        bank.zagorska.newCashOperations(-400);
-        bank.hala.newCashOperations(600);
-        bank.hala.newCashOperations(-800);
-        bank.pilsudskiego.newCashOperations(100);
-        bank.ratuszowa.newCashOperations(-100);
-        bank.gwarek.newCashOperations(300);
+        bank.getKrakowska().addNewCashOperations(100);
+        bank.getKrakowska().addNewCashOperations(300);
+        bank.getZagorska().addNewCashOperations(100);
+        bank.getZagorska().addNewCashOperations(-500);
+        bank.getZagorska().addNewCashOperations(-400);
+        bank.getHala().addNewCashOperations(600);
+        bank.getHala().addNewCashOperations(-800);
+        bank.getPilsudskiego().addNewCashOperations(100);
+        bank.getRatuszowa().addNewCashOperations(-100);
+        bank.getGwarek().addNewCashOperations(300);
 
         int paymentCounter = bank.cashPaymentCounter();
         assertEquals(6, paymentCounter);
@@ -120,16 +120,16 @@ public class BankTestSuite {
     public void cashPaymentCounterIfNoPayments() {
         Bank bank = new Bank();
 
-        bank.krakowska.newCashOperations(-100);
-        bank.krakowska.newCashOperations(-300);
-        bank.zagorska.newCashOperations(-100);
-        bank.zagorska.newCashOperations(-500);
-        bank.zagorska.newCashOperations(-400);
-        bank.hala.newCashOperations(-600);
-        bank.hala.newCashOperations(-800);
-        bank.pilsudskiego.newCashOperations(-100);
-        bank.ratuszowa.newCashOperations(-100);
-        bank.gwarek.newCashOperations(-300);
+        bank.getKrakowska().addNewCashOperations(-100);
+        bank.getKrakowska().addNewCashOperations(-300);
+        bank.getZagorska().addNewCashOperations(-100);
+        bank.getZagorska().addNewCashOperations(-500);
+        bank.getZagorska().addNewCashOperations(-400);
+        bank.getHala().addNewCashOperations(-600);
+        bank.getHala().addNewCashOperations(-800);
+        bank.getPilsudskiego().addNewCashOperations(-100);
+        bank.getRatuszowa().addNewCashOperations(-100);
+        bank.getGwarek().addNewCashOperations(-300);
 
         int paymentCounter = bank.cashPaymentCounter();
         assertEquals(0, paymentCounter);
@@ -147,16 +147,16 @@ public class BankTestSuite {
     public void averageCashWithdrawal(){
         Bank bank = new Bank();
 
-        bank.krakowska.newCashOperations(100);
-        bank.krakowska.newCashOperations(300);
-        bank.zagorska.newCashOperations(100);
-        bank.zagorska.newCashOperations(-500);
-        bank.zagorska.newCashOperations(-400);
-        bank.hala.newCashOperations(600);
-        bank.hala.newCashOperations(-800);
-        bank.pilsudskiego.newCashOperations(100);
-        bank.ratuszowa.newCashOperations(-100);
-        bank.gwarek.newCashOperations(300);
+        bank.getKrakowska().addNewCashOperations(100);
+        bank.getKrakowska().addNewCashOperations(300);
+        bank.getZagorska().addNewCashOperations(100);
+        bank.getZagorska().addNewCashOperations(-500);
+        bank.getZagorska().addNewCashOperations(-400);
+        bank.getHala().addNewCashOperations(600);
+        bank.getHala().addNewCashOperations(-800);
+        bank.getPilsudskiego().addNewCashOperations(100);
+        bank.getRatuszowa().addNewCashOperations(-100);
+        bank.getGwarek().addNewCashOperations(300);
 
         assertEquals(-450, bank.averageCashWithdrawal());
     }
@@ -165,16 +165,16 @@ public class BankTestSuite {
     public void averageCashWithdrawalIfNoWithdrawals(){
         Bank bank = new Bank();
 
-        bank.krakowska.newCashOperations(0);
-        bank.krakowska.newCashOperations(0);
-        bank.zagorska.newCashOperations(0);
-        bank.zagorska.newCashOperations(0);
-        bank.zagorska.newCashOperations(0);
-        bank.hala.newCashOperations(0);
-        bank.hala.newCashOperations(0);
-        bank.pilsudskiego.newCashOperations(0);
-        bank.ratuszowa.newCashOperations(0);
-        bank.gwarek.newCashOperations(0);
+        bank.getKrakowska().addNewCashOperations(0);
+        bank.getKrakowska().addNewCashOperations(0);
+        bank.getZagorska().addNewCashOperations(0);
+        bank.getZagorska().addNewCashOperations(0);
+        bank.getZagorska().addNewCashOperations(0);
+        bank.getHala().addNewCashOperations(0);
+        bank.getHala().addNewCashOperations(0);
+        bank.getPilsudskiego().addNewCashOperations(0);
+        bank.getRatuszowa().addNewCashOperations(0);
+        bank.getGwarek().addNewCashOperations(0);
 
         assertEquals(0, bank.averageCashWithdrawal());
     }
@@ -191,16 +191,16 @@ public class BankTestSuite {
     public void averageCashPayment(){
         Bank bank = new Bank();
 
-        bank.krakowska.newCashOperations(100);
-        bank.krakowska.newCashOperations(300);
-        bank.zagorska.newCashOperations(100);
-        bank.zagorska.newCashOperations(-500);
-        bank.zagorska.newCashOperations(-400);
-        bank.hala.newCashOperations(600);
-        bank.hala.newCashOperations(-800);
-        bank.pilsudskiego.newCashOperations(100);
-        bank.ratuszowa.newCashOperations(-100);
-        bank.gwarek.newCashOperations(300);
+        bank.getKrakowska().addNewCashOperations(100);
+        bank.getKrakowska().addNewCashOperations(300);
+        bank.getZagorska().addNewCashOperations(100);
+        bank.getZagorska().addNewCashOperations(-500);
+        bank.getZagorska().addNewCashOperations(-400);
+        bank.getHala().addNewCashOperations(600);
+        bank.getHala().addNewCashOperations(-800);
+        bank.getPilsudskiego().addNewCashOperations(100);
+        bank.getRatuszowa().addNewCashOperations(-100);
+        bank.getGwarek().addNewCashOperations(300);
 
         assertEquals(250, bank.averageCashPayment());
     }
@@ -209,16 +209,16 @@ public class BankTestSuite {
     public void averageCashPaymentIfNoPayments(){
         Bank bank = new Bank();
 
-        bank.krakowska.newCashOperations(0);
-        bank.krakowska.newCashOperations(0);
-        bank.zagorska.newCashOperations(0);
-        bank.zagorska.newCashOperations(0);
-        bank.zagorska.newCashOperations(0);
-        bank.hala.newCashOperations(0);
-        bank.hala.newCashOperations(0);
-        bank.pilsudskiego.newCashOperations(0);
-        bank.ratuszowa.newCashOperations(0);
-        bank.gwarek.newCashOperations(0);
+        bank.getKrakowska().addNewCashOperations(0);
+        bank.getKrakowska().addNewCashOperations(0);
+        bank.getZagorska().addNewCashOperations(0);
+        bank.getZagorska().addNewCashOperations(0);
+        bank.getZagorska().addNewCashOperations(0);
+        bank.getHala().addNewCashOperations(0);
+        bank.getHala().addNewCashOperations(0);
+        bank.getPilsudskiego().addNewCashOperations(0);
+        bank.getRatuszowa().addNewCashOperations(0);
+        bank.getGwarek().addNewCashOperations(0);
 
         assertEquals(0, bank.averageCashPayment());
     }
