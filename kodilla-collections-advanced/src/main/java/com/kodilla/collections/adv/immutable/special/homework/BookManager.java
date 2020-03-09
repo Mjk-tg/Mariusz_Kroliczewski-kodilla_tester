@@ -1,7 +1,7 @@
 package com.kodilla.collections.adv.immutable.special.homework;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 
 public class BookManager {
@@ -12,24 +12,27 @@ public class BookManager {
 //       return book;
 //    }
 
-    List <Book> books = new ArrayList<>();
+    Set<Book> books = new HashSet<>();
 
     public Book createBook(String author, String title) {
         Book book = new Book(author, title);
-        books.add(book);
+        Book lastAddedBook = book;
         if (books.size()>0){
-            ifCollectionContainsThisBook(author, title);
+            ifCollectionContainsThisBook(lastAddedBook);
         }
+        books.add(book);
         return book;
     }
 
-    public void ifCollectionContainsThisBook(String author, String title){
-        for (int n=0;n<(books.size()-1); n++) {
-                if (books.get(books.size() - 1).getAuthor().equals(author) && books.get(n).getTitle().equals(title)) {
+    public void ifCollectionContainsThisBook(Book lastAddedBook){
+        for (Book book:books
+             ) {if (book.equals(lastAddedBook) && book.hashCode()==lastAddedBook.hashCode()) {
                     System.out.println( "-----------------------------------------------------");
-                    System.out.println("You adding the same book again. Book " + books.get(n).getTitle() + " written by " + books.get(n).getAuthor());
-                    System.out.println( "  ");
-                }
+                    System.out.println("You are adding the same book again. Book " + lastAddedBook.getTitle() + " written by " + lastAddedBook.getAuthor());
+                    if (book.equals(lastAddedBook)) {
+                        System.out.println("Address: " + book + " , of book inside the collection is identical to address: " + lastAddedBook +" of book you trying to add ");}
+                        System.out.println( "  ");
+            }
         }
     }
 }

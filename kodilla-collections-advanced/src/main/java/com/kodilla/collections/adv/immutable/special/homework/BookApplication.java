@@ -21,17 +21,9 @@ public class BookApplication {
         System.out.println(book3Prim.hashCode());
         System.out.println("   ");
 
+        System.out.println(" Library Content");
         for (Book collectedBooks:bookManager.books) {
-            System.out.println( "Autor: " + collectedBooks.getAuthor() + ", tytuł: " + collectedBooks.getTitle() + "adres" +collectedBooks);
-        }
-        if (bookManager.books.size()>1) {
-            for (int n=0; n<bookManager.books.size(); n++){
-                for (int i=n+1; i<bookManager.books.size(); i++)
-                    if ((bookManager.books.get(n).equals(bookManager.books.get(i))) && ((bookManager.books.get(n).hashCode() == bookManager.books.get(i).hashCode()))) {
-                        System.out.println("  ");
-                        System.out.println("Adres: " +bookManager.books.get(n) +" ksiązki o indeksie " + n + " == "+ "Adres: " + bookManager.books.get(i) +" ksiązki o indeksie " + i );
-                    }
-            }
+            System.out.println( "Author: " + collectedBooks.getAuthor() + ", title: " + collectedBooks.getTitle());
         }
     }
 }
