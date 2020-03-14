@@ -25,5 +25,11 @@ public class BookApplication {
         for (Book collectedBooks:bookManager.books) {
             System.out.println( "Author: " + collectedBooks.getAuthor() + ", title: " + collectedBooks.getTitle());
         }
+
+        for (Book collectedBooks:bookManager.books) {
+            if ((collectedBooks.getAuthor().equals(book3Prim.getAuthor()) && (collectedBooks.getTitle().equals(book3Prim.getTitle())))){
+                System.out.println("Address: " + collectedBooks + " , of book inside the collection is identical to address: " + book3Prim +" of book not added to collection ");}
+                System.out.println( "  ");
+        }
     }
 }
