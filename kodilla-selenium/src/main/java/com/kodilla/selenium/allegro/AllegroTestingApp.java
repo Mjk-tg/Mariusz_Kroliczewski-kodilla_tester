@@ -19,12 +19,12 @@ public class AllegroTestingApp {
         allegroInfo.click();
 
 
-        WebElement allegroProductSelection = driver.findElement(By.xpath("//*[@data-prototype-id=\"allegro.metrumHeader.search\"]/div/form/input"));
+        WebElement allegroProductSelection = driver.findElement(By.xpath("//*[@class=\"_1t7v4 _475cu _7qjq4 _fee54_O2svT\"]/div/div/form/input"));
         allegroProductSelection.sendKeys(("Mavic mini"));
         allegroProductSelection = driver.findElement(By.xpath("//*[@class=\"_d25db_2P-5I _1h7wt _k70df _7qjq4\"]"));
         Select categorySelect = new Select(allegroProductSelection);
         categorySelect.selectByVisibleText("Elektronika");
         allegroProductSelection = driver.findElement(By.xpath("//*[@class=\"_d25db_1t06j _13q9y _8tsq7 _1q2ua\"]"));
-        allegroProductSelection.submit();
+        allegroProductSelection.click();
     }
 }
