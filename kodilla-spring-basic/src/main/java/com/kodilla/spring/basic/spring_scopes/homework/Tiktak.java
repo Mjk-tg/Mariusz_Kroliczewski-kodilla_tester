@@ -9,9 +9,10 @@ public class Tiktak {
 
         ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring");
         Clock clock1 = context.getBean(Clock.class);
-        Thread.sleep(2000);
+        Thread.sleep(300);
+        System.out.println();
         Clock clock2 = context.getBean(Clock.class);
-        Thread.sleep(2000);
+        Thread.sleep(300);
         Clock clock3 = context.getBean(Clock.class);
 
         long time1=clock1.getTime();
