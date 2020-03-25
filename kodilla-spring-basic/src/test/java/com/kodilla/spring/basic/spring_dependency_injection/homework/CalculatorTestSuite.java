@@ -6,22 +6,22 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 
 @SpringBootTest
 public class CalculatorTestSuite {
     ApplicationContext context = new AnnotationConfigApplicationContext("com.kodilla.spring.basic");
-    Calculator bean = context.getBean(Calculator.class);
-    Exception exception = context.getBean(DivideByZeroException.class);
+    Calculator calculator = context.getBean(Calculator.class);
 
     @Test
     public  void shouldDisplayResult(){
         //given
-        Display bean = context.getBean(Display.class);
+        Display display = context.getBean(Display.class);
         //when
-        Display display = bean.display(10);
+        double screen = display.console(10);
         //then
-        Assertions.assertNull(display);
-
+        Assertions.assertEquals(10,screen);
     }
 
     @Test
@@ -31,11 +31,10 @@ public class CalculatorTestSuite {
         double b=1;
 
         //when
-        double result = bean.add(a, b);
+        double result = calculator.add(a, b);
 
         //then
         Assertions.assertEquals(1,result);
-
     }
 
     @Test
@@ -45,7 +44,7 @@ public class CalculatorTestSuite {
         double b=1;
 
         //when
-        double result = bean.subtract(a, b);
+        double result = calculator.subtract(a, b);
 
         //then
         Assertions.assertEquals(-1,result);
@@ -58,7 +57,7 @@ public class CalculatorTestSuite {
         double b=1;
 
         //when
-        double result = bean.multiply(a, b);
+        double result = calculator.multiply(a, b);
 
         //then
         Assertions.assertEquals(0,result);
@@ -71,23 +70,23 @@ public class CalculatorTestSuite {
         double b=1;
 
         //when
-        double result = bean.divide(a, b);
+        double result = calculator.divide(a, b);
 
         //then
         Assertions.assertEquals(0,result);
     }
 
-//   @Test(expected=DivideByZeroException.class)
-//    public void shouldThrowExceptionIfDividingByZero() throws DivideByZeroException {
-//        //given
-//        double a=1.0;
-//        double b=0.0;
-//
-//        //when
-//        double result = bean.divide(a, b);
-//
-//        //then
-//       Assertions.assertEquals(0,result);
-//    }
+   @Test
+    public void shouldThrowExceptionIfDividingByZero() throws DivideByZeroException {
+        //given
+        double a=1.0;
+        double b=0.0;
 
+        //when
+
+        //then
+       assertThrows(DivideByZeroException.class, () -> {
+           calculator.divide(a, b);
+       });
+    }
 }

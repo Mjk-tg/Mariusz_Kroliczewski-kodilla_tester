@@ -14,19 +14,20 @@ public class Calculator {
 
     public double add(double a, double b){
         value=a+b;
-        display.display(value);
-        return (value);
+        display.console(value);
+        return value;
     }
+
     public double subtract(double a, double b) {
         value=a-b;
-        display.display(value);
-        return (value);
+        display.console(value);
+        return value;
     }
 
     public double multiply(double a, double b) {
         value=a*b;
-        display.display(value);
-        return (value);
+        display.console(value);
+        return value;
     }
 
     public double divide(double a, double b) throws DivideByZeroException {
@@ -34,7 +35,7 @@ public class Calculator {
             throw new DivideByZeroException();
         }
         value = a / b;
-        display.display(value);
+        display.console(value);
         return value;
     }
 }
